@@ -1,3 +1,17 @@
+# CTest
+Testing
+*.cmake
+*.tcl
+
+# CMake
+CMakeFiles
+CMakeCache.txt
+Makefile
+
+# output files
+bin
+
+
 # Prerequisites
 *.d
 
