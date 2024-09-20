@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include "sample_library.h"
-#include "errors.h"
+#include <stdlib.h>
 
-int main() {
+// this is my entry point, as defined in CMakeLists.txt
+// it can be configured by passing -e,custom_entry_point
+// to the linker, but it still needs a dummy main function.
+void custom_entry_point() {
     printf("hello world\n");
-    printf("sum(2, 3) = %d\n", sum(2, 3));
-    throw_error(ERROR_GENERAL, "This is a test.");
-    return 0;
+    exit(0);
 }
+
+int main(void) { return 0; }

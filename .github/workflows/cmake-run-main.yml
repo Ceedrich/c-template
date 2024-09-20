@@ -1,11 +1,9 @@
-name: CMake Build and Test
+name: CMake Build and run main
 
 on:
   push:
     branches:
       - '**'
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build-and-test:
@@ -20,10 +18,10 @@ jobs:
         sudo apt-get install -y cmake make
 
     - name: Configure CMake
-      run: cmake -S . -DCURRENT_DEBUG_LEVEL=DEBUG
+      run: cmake -S .
 
     - name: Build
-      run: make
+      run: cmake --build .
 
-    - name: Run tests
-      run: ctest
+    - name: Run main
+      run: bin/main
