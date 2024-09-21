@@ -17,5 +17,5 @@ add_compile_options(-Wall)
 # Main executable
 add_executable(main main.c)
 set_target_properties(main PROPERTIES
-    LINK_FLAGS "-Wl,-e,custom_entry_point"
+    LINK_FLAGS "-Wl,-defsym=main=custom_entry_point"
 )
